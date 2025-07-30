@@ -44,9 +44,9 @@ Ready to collaborate on AI solutions or discuss how intelligent agents can trans
 - End-to-end content creation workflow
 - Professional formatting and optimization
 
-[🔗 Try it out](https://app.mindstudio.ai/agents/blog-post-generator-advanced-f1b40b30/run/85b16abe-78ff-4201-b112-4d9171de035c) | 
+[🔗 Try it out](https://app.mindstudio.ai/agents/blog-post-generator-advanced-f1b40b30/run/85b16abe-78ff-4201-b112-4d9171de035c)
 
-[🔗 Make a copy on MindStudio](https://app.mindstudio.ai/agents/blog-post-generator-advanced-f1b40b30/remix)
+[🔗 Make a copy](https://app.mindstudio.ai/agents/blog-post-generator-advanced-f1b40b30/remix)
 
 ---
 
@@ -66,7 +66,8 @@ Ready to collaborate on AI solutions or discuss how intelligent agents can trans
 - Structured reporting with evidence-backed observations
 - Gap identification for areas requiring further research
 
-[🔗 Try it out](https://app.mindstudio.ai/agents/business-intelligence-analyzer-e72246f3/run) | 
+[🔗 Try it out](https://app.mindstudio.ai/agents/business-intelligence-analyzer-e72246f3/run)
+
 [🔗 Make a copy](https://app.mindstudio.ai/agents/business-intelligence-analyzer-e72246f3/remix)
 
 ---
