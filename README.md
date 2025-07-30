@@ -55,21 +55,43 @@ Ready to collaborate on AI solutions or discuss how intelligent agents can trans
 ## 🔧 Other AI Agents
 
 ### Business Intelligence Analyzer
-**Description**: AI agent to perform a detailed business intelligence analysis of a company's website. It extracts key insights across seven areas—core business info, products/services, customer segments, market position, business model, competitive advantages, and industry context.
+**Description**: AI agent to perform a detailed business intelligence analysis of a company's website, extracting key insights across seven critical business areas with structured, evidence-backed reporting.
 
-**Use Case**: Perfect for market researchers, business analysts, consultants, and entrepreneurs who need to quickly understand a company's business model and competitive positioning without spending hours manually researching their website and materials.
+**Use Case**: Perfect for business analysts, consultants, and strategic planners who need to quickly assess potential clients, competitors, or investment opportunities by analyzing their digital presence and business model.
 
 **Key Features:**
-- Comprehensive analysis across seven key business areas
-- Automated extraction of core business information
-- Market positioning and competitive advantage identification
-- Customer segment analysis and insights
-- Business model evaluation and documentation
-- Structured reporting with evidence-backed observations
-- Gap identification for areas requiring further research
+- Comprehensive analysis across seven business dimensions
+- Core business information extraction
+- Products/services assessment
+- Customer segment identification
+- Market positioning analysis
+- Business model evaluation
+- Competitive advantage identification
+- Industry context mapping
+- Structured reporting with evidence backing
+- Gap identification for further research
 
 [🔗 Try it out](https://app.mindstudio.ai/agents/business-intelligence-analyzer-e72246f3/run)
 
-[🔗 Make a copy](https://app.mindstudio.ai/agents/business-intelligence-analyzer-e72246f3/remix)
+[📋 Make a copy](https://app.mindstudio.ai/agents/business-intelligence-analyzer-e72246f3/remix)
+
+---
+
+### Content Summarizer
+**Description**: AI Agent that generates concise TLDR summaries for any web page, PDF, or document, helping you quickly extract key information from lengthy content.
+
+**Use Case**: Ideal for busy professionals, researchers, and students who need to process large volumes of content quickly, whether it's industry reports, academic papers, news articles, or documentation.
+
+**Key Features:**
+- Universal content processing (web pages, PDFs, documents)
+- Intelligent key point extraction
+- Concise TLDR format output
+- Time-saving content digestion
+- Multi-format compatibility
+- Quick information retrieval
+
+[🔗 Try it out](https://app.mindstudio.ai/agents/content-summarizer-b066f36e/run)
+
+[📋 Make a copy](https://app.mindstudio.ai/agents/content-summarizer-b066f36e/remix)
 
 ---
