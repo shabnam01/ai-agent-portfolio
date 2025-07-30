@@ -31,6 +31,8 @@ Ready to collaborate on AI solutions or discuss how intelligent agents can trans
 ---
 # 🧠 AI Agent Portfolio
 
+## 🔧 Featured AI Agents
+
 ### Blog Post Generator Pro
 
 **Description**: A comprehensive blog post writer that will brainstorm an outline, generate a long-form article, and create an accompanying image to complete your blog post package.
