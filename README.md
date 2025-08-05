@@ -34,6 +34,6 @@ Ready to collaborate on AI solutions or discuss how intelligent agents can trans
 
 Ready to see my AI agents in action? Check out my complete portfolio of AI solutions, from featured agents to specialized tools for various use cases.
 
-**[🎯 View All AI Agents →](index.html)**
+**[🎯 View All AI Agents →](https://shabnamsb.com/agents)**
 
 *Discover how AI can transform your workflows, from content creation to business automation and beyond.*
