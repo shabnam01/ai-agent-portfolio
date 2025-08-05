@@ -24,7 +24,7 @@ Ready to collaborate on AI solutions or discuss how intelligent agents can trans
 - **Custom AI agent development**
 - **AI implementation consulting**
 
-[📬 Email me](mailto:shabnam.suresh@gmail.com) or [💼 Connect on LinkedIn](https://www.linkedin.com/in/shabnam-suresh)
+[📬 Email me](mailto:shabnam.suresh@gmail.com) | [🌐 Website](https://shabnamsb.com) | [💼 Connect on LinkedIn](https://www.linkedin.com/in/shabnam-suresh)
 
 *Located in Surrey, British Columbia, Canada | Open to remote collaboration worldwide*
 
