@@ -1,5 +1,5 @@
 ## 👋 About Me
-Hi, I'm **Shabnam Suresh Babu** – a strategic Product & Program Manager with 12+ years of experience building innovative solutions that bridge technology and user needs. Currently working with the AI Community Learning Program powered by Microsoft Teams, I'm passionate about leveraging AI to solve real-world problems and streamline complex workflows.
+Hi, I'm **Shabnam Suresh Babu** – a strategic Product & Program Manager with 14+ years of experience building innovative solutions that bridge technology and user needs. Currently working with the AI Community Learning Program powered by Microsoft Teams, I'm passionate about leveraging AI to solve real-world problems and streamline complex workflows.
 
 With over a decade of experience in product and program management, I've led cross-functional teams in developing everything from healthcare workflow solutions to IoT business applications. My journey spans from hands-on technical roles to strategic product leadership, always with a focus on creating user-centric solutions.
 
