@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shabnam Suresh Babu - AI Agent Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            background: #333;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .location {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .tab {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab:hover {
+            color: #333;
+            background: rgba(0,0,0,0.02);
+        }
+
+        .tab.active {
+            color: #111;
+            border-bottom-color: #333;
+            font-weight: 600;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* About Section */
+        .about-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .about-content h2 {
+            color: #111;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .expertise-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .expertise-item {
+            padding: 0.75rem;
+            background: #f8f8f8;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .expertise-item:hover {
+            background: #eee;
+            transform: translateY(-1px);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #e5e5e5;
+        }
+
+        .card h3 {
+            color: #111;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .card .use-case {
+            background: #f8f8f8;
+            padding: 0.75rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .card .features {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #333;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: #111;
+            color: white;
+            border-color: #111;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: #111;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+            }
+
+            .tab {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .expertise-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #333;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="hero">
+                <h1>Shabnam Suresh Babu</h1>
+                <p>Strategic Product & Program Manager with 14+ years of experience building innovative AI solutions that bridge technology and user needs</p>
+                <div class="contact-info">
+                    <a href="https://www.linkedin.com/in/shabnam-suresh" target="_blank">🔗 LinkedIn</a>
+                    <a href="https://github.com/shabnam-suresh" target="_blank">📂 GitHub</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="tabs">
+            <button class="tab" data-tab="featured">Featured Agents</button>
+            <button class="tab" data-tab="all">All other agents</button>
+        </nav>
+        <div id="featured" class="tab-content active">
+            <div class="section-header">
+                <h2>🚀 Featured AI Agents</h2>
+                <p>My most popular and comprehensive AI solutions</p>
+            </div>
+            <div class="cards-grid" id="featured-agents"></div>
+        </div>
+
+        <div id="all" class="tab-content">
+            <div class="section-header">
+                <h2>🧠 All Other Agents</h2>
+                <p>Additional AI agents and tools I've developed</p>
+            </div>
+            <div class="cards-grid" id="all-agents"></div>
+        </div>
+    </main>
+
+    <script>
+        // Agent data
+        const agents = {
+            featured: [
+                {
+                    title: "Blog Post Generator Pro",
+                    description: "A comprehensive blog post writer that brainstorms outlines, generates long-form articles, and creates accompanying images.",
+                    useCase: "Content marketers can quickly produce complete blog posts with visuals for their editorial calendar.",
+                    features: "Automated outline creation, long-form content generation, and integrated image creation.",
+                    tryUrl: "https://app.mindstudio.ai/agents/blog-post-generator-advanced-f1b40b30/run/85b16abe-78ff-4201-b112-4d9171de035c",
+                    copyUrl: "https://app.mindstudio.ai/agents/blog-post-generator-advanced-f1b40b30/remix"
+                },
+                {
+                    title: "Product Comparison Analyzer",
+                    description: "Analyzes any product page and searches the web to draw detailed comparisons with similar competitor products.",
+                    useCase: "E-commerce managers can quickly understand their competitive positioning by running this on competitor product pages.",
+                    features: "Automated product analysis and comprehensive competitor comparison research.",
+                    tryUrl: "https://app.mindstudio.ai/agents/product-comparison-analyzer-a00add0e/run",
+                    copyUrl: "https://app.mindstudio.ai/agents/product-comparison-analyzer-a00add0e/remix"
+                },
+                {
+                    title: "Sales Outreach Assistant",
+                    description: "Analyzes target companies, identifies potential needs, and drafts personalized cold outreach emails with subject lines.",
+                    useCase: "Sales teams can create tailored outreach campaigns by inputting prospect company information.",
+                    features: "Company analysis, needs identification, and personalized email drafting with subject line generation.",
+                    tryUrl: "https://app.mindstudio.ai/agents/sales-outreach-assistant-8695faf0/run/03706ce9-0d49-4da6-b532-252469db8849",
+                    copyUrl: "https://app.mindstudio.ai/agents/sales-outreach-assistant-8695faf0/remix"
+                },
+                {
+                    title: "Personalized Fitness Plan Builder",
+                    description: "Creates customized weekly workout plans based on user goals and available time through intelligent chaining.",
+                    useCase: "Personal trainers can quickly generate tailored fitness programs for clients with different schedules and objectives.",
+                    features: "Goal-based customization and time-optimized weekly scheduling.",
+                    tryUrl: "https://app.mindstudio.ai/agents/personalized-fitness-plan-builder-b7e904e5/run/d1a87d64-7ed6-4cc4-b7f9-8deb5f350ecf",
+                    copyUrl: "https://app.mindstudio.ai/agents/personalized-fitness-plan-builder-b7e904e5/remix"
+                },
+                {
+                    title: "HR Job Description Generator",
+                    description: "Creates complete and well-structured job descriptions for HR departments based on job titles and key details.",
+                    useCase: "HR professionals can quickly generate comprehensive job postings by inputting basic role information.",
+                    features: "Complete job description structure and professional formatting for HR use.",
+                    tryUrl: "https://app.mindstudio.ai/agents/hr-job-description-generator-1876fcef/run/78b32da6-0c7b-483f-a2a5-71df8fe0ffae",
+                    copyUrl: "https://app.mindstudio.ai/agents/hr-job-description-generator-1876fcef/remix"
+                },
+                {
+                    title: "TL;DR",
+                    description: "Extracts key points from articles, reports, academic papers, and documents while browsing to help you grasp important information in seconds.",
+                    useCase: "Researchers can quickly scan through multiple academic papers to identify relevant studies for their work.",
+                    features: "Real-time content extraction and instant key point summarization while browsing.",
+                    tryUrl: "https://app.mindstudio.ai/agents/tldr-20391eb8/run/8fa336c4-08c8-4a61-8a61-7919724ad372",
+                    copyUrl: "https://app.mindstudio.ai/agents/tldr-20391eb8/remix"
+                }
+            ],
+            other: [
+                {
+                    title: "Business Intelligence Analyzer",
+                    description: "Performs detailed business intelligence analysis of company websites across seven key areas including market position and competitive advantages.",
+                    useCase: "Investment analysts can quickly assess potential acquisition targets by analyzing their web presence.",
+                    features: "Seven-area analysis framework and structured reporting with evidence-backed observations.",
+                    tryUrl: "https://app.mindstudio.ai/agents/business-intelligence-analyzer-e72246f3/run",
+                    copyUrl: "https://app.mindstudio.ai/agents/business-intelligence-analyzer-e72246f3/remix"
+                },
+                {
+                    title: "Mini-Documentary Creator",
+                    description: "Generates complete mini-documentaries with informational scripts, cover images, video clips, and background audio tracks.",
+                    useCase: "Educational content creators can produce engaging documentary-style content for online courses.",
+                    features: "Multi-media content generation including script, visuals, video, and audio components.",
+                    tryUrl: "https://app.mindstudio.ai/agents/minidocumentary-creator-f5a7ca3c/run/ef89ac44-5265-4419-8d61-b5eb750c515c",
+                    copyUrl: "https://app.mindstudio.ai/agents/minidocumentary-creator-f5a7ca3c/remix"
+                },
+                {
+                    title: "AI Recipe Assistant with Audio & Image",
+                    description: "Generates recipes with main photos and audio narration of cooking instructions.",
+                    useCase: "Food bloggers can create comprehensive recipe content with visual and audio elements for their audience.",
+                    features: "Recipe generation with integrated photo creation and audio instruction narration.",
+                    tryUrl: "https://app.mindstudio.ai/agents/ai-recipe-assistant-7ce6db62/run/9f052f84-4b99-4a81-8132-49bd6a5d4fca",
+                    copyUrl: "https://app.mindstudio.ai/agents/ai-recipe-assistant-7ce6db62/remix"
+                },
+                {
+                    title: "Terms of Service Simplifier",
+                    description: "Simplifies complex terms of service text that users encounter when creating new accounts.",
+                    useCase: "Consumers can understand what they're agreeing to before signing up for new digital services.",
+                    features: "Legal text simplification and plain language conversion.",
+                    tryUrl: "https://app.mindstudio.ai/agents/terms-of-service-simplifier-51fac92e/run",
+                    copyUrl: "https://app.mindstudio.ai/agents/terms-of-service-simplifier-51fac92e/remix"
+                },
+                {
+                    title: "Content Repurposing Agent",
+                    description: "Takes existing content like blog posts and repurposes it into social media posts and email blurbs.",
+                    useCase: "Marketing teams can maximize content ROI by transforming one blog post into multiple marketing materials.",
+                    features: "Multi-format content transformation and platform-specific optimization.",
+                    tryUrl: "https://app.mindstudio.ai/agents/content-repurposing-agent-4d7beb98/run/a83bb07f-81ad-4b20-82fb-192b8727090f",
+                    copyUrl: "https://app.mindstudio.ai/agents/content-repurposing-agent-4d7beb98/remix"
+                },
+                {
+                    title: "Customer Feedback Analyzer",
+                    description: "Extracts structured data from customer reviews to provide actionable insights.",
+                    useCase: "Product managers can analyze customer feedback to identify common pain points and feature requests.",
+                    features: "Structured data extraction and actionable insight generation from reviews.",
+                    tryUrl: "https://app.mindstudio.ai/agents/customer-feedback-analyzer-f7d223a0/run/ee87245c-c859-4495-9ae6-177f88f5318b",
+                    copyUrl: "https://app.mindstudio.ai/agents/customer-feedback-analyzer-f7d223a0/remix"
+                },
+                {
+                    title: "Quote Generator Agent with Image",
+                    description: "Generates inspirational quotes with accompanying images from a single inspiration word.",
+                    useCase: "Social media managers can create motivational content by inputting theme words like 'success' or 'growth.'",
+                    features: "Quote generation and integrated image creation from inspiration words.",
+                    tryUrl: "https://app.mindstudio.ai/agents/quote-generator-agent-35f9c64e/run/ef1a2023-41aa-4ec2-9d63-e769fbe8e7f8",
+                    copyUrl: "https://app.mindstudio.ai/agents/quote-generator-agent-35f9c64e/remix"
+                },
+                {
+                    title: "Three-Word Story",
+                    description: "Generates creative three-word stories based on story objects provided by users.",
+                    useCase: "Creative writing teachers can use this for quick writing prompts and storytelling exercises.",
+                    features: "Concise story generation and creative prompt creation.",
+                    tryUrl: "https://app.mindstudio.ai/agents/threeword-story-9a091975/run/e1d30d70-7eb5-4fe3-8e80-06f3985fa658",
+                    copyUrl: "https://app.mindstudio.ai/agents/threeword-story-9a091975/remix"
+                },
+                {
+                    title: "LinkedIn Post Generator",
+                    description: "Converts content into concise LinkedIn posts using image or text input with human-in-the-loop refinement.",
+                    useCase: "Marketing strategists can transform industry news articles into engaging LinkedIn content for thought leadership.",
+                    features: "Multi-input content conversion and human review checkpoint for quality control.",
+                    tryUrl: "https://app.mindstudio.ai/agents/linkedin-post-generator-6272b94b/run/8039ab81-da08-43ed-9c0b-aa29005dac38",
+                    copyUrl: "https://app.mindstudio.ai/agents/linkedin-post-generator-6272b94b/remix"
+                },
+                {
+                    title: "Article Summarizer for Research",
+                    description: "Quickly summarizes long online articles for researchers, students, and professionals who need to digest information efficiently.",
+                    useCase: "Graduate students can process multiple research papers quickly to identify relevant sources for their thesis.",
+                    features: "Long-form content summarization optimized for research and academic use.",
+                    tryUrl: "https://app.mindstudio.ai/agents/article-summarizer-for-research-9b6399cb/run/60af69d5-16b5-487d-bd43-a02058cb248b",
+                    copyUrl: "https://app.mindstudio.ai/agents/article-summarizer-for-research-9b6399cb/remix"
+                },
+                {
+                    title: "Competitor Product Feature Extractor",
+                    description: "Analyzes competitor product pages to extract key features and benefits for competitive intelligence.",
+                    useCase: "Product managers can quickly analyze new competitor launches to understand their positioning strategy.",
+                    features: "Feature extraction and benefit analysis for competitive landscape understanding.",
+                    tryUrl: "https://app.mindstudio.ai/agents/product-competitor-analyzer-0ab55941/run/108f9862-0245-4840-8ac4-0bac4698d767",
+                    copyUrl: "https://app.mindstudio.ai/agents/product-competitor-analyzer-0ab55941/remix"
+                },
+                {
+                    title: "Job Description Extractor",
+                    description: "Helps job seekers tailor resumes by extracting important keywords and requirements from job postings.",
+                    useCase: "Job applicants can optimize their resumes by identifying key skills mentioned in target job descriptions.",
+                    features: "Keyword extraction and requirement identification for resume optimization.",
+                    tryUrl: "https://app.mindstudio.ai/agents/resume-keyword-helper-70dde2c3/run/17d7bc64-e0ec-404c-9f06-2443a1872662",
+                    copyUrl: "https://app.mindstudio.ai/agents/resume-keyword-helper-70dde2c3/remix"
+                },
+                {
+                    title: "Recipe Page Generator",
+                    description: "Converts any recipe or YouTube cooking tutorial into clean, formatted, printable recipe pages.",
+                    useCase: "Home cooks can transform messy online recipes into organized, kitchen-friendly formats.",
+                    features: "Clean formatting and printable output from various recipe sources.",
+                    tryUrl: "https://app.mindstudio.ai/agents/recipe-page-generator-c6941173/run",
+                    copyUrl: "https://app.mindstudio.ai/agents/recipe-page-generator-c6941173/remix"
+                },
+                {
+                    title: "Content Summarizer",
+                    description: "Generates TLDR summaries for any web page, PDF, or document format.",
+                    useCase: "Busy executives can quickly review lengthy reports and documents to extract key information.",
+                    features: "Multi-format content processing and concise summary generation.",
+                    tryUrl: "https://app.mindstudio.ai/agents/content-summarizer-b066f36e/run",
+                    copyUrl: "https://app.mindstudio.ai/agents/content-summarizer-b066f36e/remix"
+                },
+                {
+                    title: "Product Description Agent",
+                    description: "Gathers multiple pieces of product information to generate compelling product descriptions.",
+                    useCase: "E-commerce businesses can create consistent, professional product descriptions across their catalog.",
+                    features: "Multi-input information gathering and compelling description generation.",
+                    tryUrl: "https://app.mindstudio.ai/agents/product-description-agent-f4db0031/run/04446dfd-d839-40a2-9d5a-dd5560c82549",
+                    copyUrl: "https://app.mindstudio.ai/agents/product-description-agent-f4db0031/remix"
+                },
+                {
+                    title: "Social Media Post Ideas Generator",
+                    description: "Takes a single topic input and generates three creative social media post ideas.",
+                    useCase: "Social media managers can overcome creative blocks by generating fresh content ideas for any topic.",
+                    features: "Topic-based idea generation and multiple creative variations.",
+                    tryUrl: "https://app.mindstudio.ai/agents/social-media-post-ideas-generator-b7f4f38c/run/e3d3b8d7-17d5-4fce-a822-59ba99c1e172",
+                    copyUrl: "https://app.mindstudio.ai/agents/social-media-post-ideas-generator-b7f4f38c/remix"
+                },
+                {
+                    title: "Professional Email Assistant",
+                    description: "Writes professional emails with proper tone control and variable customization.",
+                    useCase: "Business professionals can quickly draft formal emails for client communications and internal correspondence.",
+                    features: "Professional tone control and customizable email templates.",
+                    tryUrl: "https://app.mindstudio.ai/agents/professional-email-assistant-871e10f1/run/d9f63b46-60a3-4e8c-b075-75d57eca9782",
+                    copyUrl: "https://app.mindstudio.ai/agents/professional-email-assistant-871e10f1/remix"
+                },
+                {
+                    title: "My Recipe Bot",
+                    description: "Converts text to structured recipes with key sections using strict templates and markdown formatting.",
+                    useCase: "Food writers can standardize recipe formats for cookbooks and food blogs.",
+                    features: "Structured recipe formatting and consistent template application with markdown output.",
+                    tryUrl: "https://app.mindstudio.ai/agents/my-recipe-bot-e18e574b/run/2d66eca9-5789-433f-bdf5-2bfe1bab71f7",
+                    copyUrl: "https://app.mindstudio.ai/agents/my-recipe-bot-e18e574b/remix"
+                },
+                {
+                    title: "Key Points Extractor",
+                    description: "Generates key points from web pages using browser extension functionality.",
+                    useCase: "Students can quickly extract main points from online articles while researching for assignments.",
+                    features: "Browser extension integration and instant key point extraction.",
+                    tryUrl: "https://app.mindstudio.ai/agents/key-point-extractor--2-a1436cb3/run",
+                    copyUrl: "https://app.mindstudio.ai/agents/key-point-extractor--2-a1436cb3/remix"
+                },
+                {
+                    title: "Email Tone Analyzer",
+                    description: "Identifies and analyzes the tone of email content.",
+                    useCase: "Customer service teams can ensure their email responses maintain appropriate tone before sending.",
+                    features: "Tone identification and content analysis for email communications.",
+                    tryUrl: "https://app.mindstudio.ai/agents/email-tone-analyzer-522f311a/run",
+                    copyUrl: "https://app.mindstudio.ai/agents/email-tone-analyzer-522f311a/remix"
+                },
+                {
+                    title: "Jargon Buster",
+                    description: "Simplifies complex jargon and technical language into plain English.",
+                    useCase: "Technical writers can make complex documentation more accessible to general audiences.",
+                    features: "Jargon identification and plain language conversion.",
+                    tryUrl: "https://app.mindstudio.ai/agents/jargon-buster-d79cdec0/run",
+                    copyUrl: "https://app.mindstudio.ai/agents/jargon-buster-d79cdec0/remix"
+                },
+                {
+                    title: "Text to Speech",
+                    description: "Converts user input text into natural-sounding speech audio.",
+                    useCase: "Content creators can generate voiceovers for videos and presentations from written scripts.",
+                    features: "Text-to-speech conversion with natural audio output.",
+                    tryUrl: "https://app.mindstudio.ai/agents/text-to-speech-test-74b2e019/run/dae31e44-5fbf-433d-98fe-0b8101c275b8",
+                    copyUrl: "https://app.mindstudio.ai/agents/text-to-speech-test-74b2e019/remix"
+                }
+            ]
+        };
+
+        // Create agent card HTML
+        function createAgentCard(agent) {
+            return `
+                <div class="card">
+                    <h3>${agent.title}</h3>
+                    <p>${agent.description}</p>
+                    <div class="use-case"><strong>Use Case:</strong> ${agent.useCase}</div>
+                    <div class="features">${agent.features}</div>
+                    <div class="card-actions">
+                        <a href="${agent.tryUrl}" target="_blank" class="btn btn-primary">🔗 Try it out</a>
+                        <a href="${agent.copyUrl}" target="_blank" class="btn">🛠 Make a copy</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render agents
+        function renderAgents(container, agentList) {
+            const grid = document.getElementById(container);
+            grid.innerHTML = agentList.map(createAgentCard).join('');
+        }
+
+        // Tab switching
+        function switchTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
+
+            // Load agents if needed
+            if (tabName === 'featured' && !document.getElementById('featured-agents').innerHTML) {
+                renderAgents('featured-agents', agents.featured);
+            } else if (tabName === 'all' && !document.getElementById('all-agents').innerHTML) {
+                renderAgents('all-agents', [...agents.featured, ...agents.other]);
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tab click handlers
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    const tabName = e.target.getAttribute('data-tab');
+                    switchTab(tabName);
+                });
+            });
+
+            // Load featured agents initially
+            renderAgents('featured-agents', agents.featured);
+        });
+
+        // Smooth scroll for internal links
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('a[href^="#"]')) {
+                e.preventDefault();
+                const target = document.querySelector(e.target.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
